@@ -35,10 +35,10 @@ priority.
 
 In this part we created a number of text files, using 4 functions we calculated the total number of rows in the files.
 
-**1. createTextFiles** - this function create the text files andThis function creates the text files and the number of lines in each file randomly.
-It return an array with the names of the files.
-**2. getNumOfLines** - this function get an array of files and returns the total number of rows of all files.
-**3. getNumOfLinesThreads** - this function get an array of files and returns the total number of rows of all files using threads.
+**1. createTextFiles** - this function create the text files andThis function creates the text files and the number of lines in each file randomly.  
+It return an array with the names of the files.  
+**2. getNumOfLines** - this function get an array of files and returns the total number of rows of all files.  
+**3. getNumOfLinesThreads** - this function get an array of files and returns the total number of rows of all files using threads.  
 **4. getNumOfLinesThreadsPool** - this function get an array of files and returns the total number of rows of all files using ThreadPool.
 
 
