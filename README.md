@@ -74,8 +74,7 @@ As we can see, the function without using threads took the most time to calculat
 while the function using threadsPool took the least time.
 The function used by threads took the average time between the above 2 functions.
 In the first function, the rows are calculated one after the other, not simultaneously.
-In the second function, the calculation of the rows is done by several threads at the same time, but after they finished  
-calculating their row, they died and more were created each time.
+In the second function, the calculation of the rows is done by several threads at the same time, but after they finished calculating their row, they died and more were created each time.
 In the third function, the calculation of the rows is also done by several threads at the same time, but after they finished  
 calculating their row, they did not die, but moved on to the calculation of the next row,This is because it was managed in threadspool
  
@@ -87,10 +86,22 @@ From here we can understand the reasons for the difference between the running t
 In this part we created new type that provides an asynchronous task with priority and a ThreadPool type that supports tasks
 priority.
 
-## picture of the diagrama
+## add picture of the diagrama
 
-### Task - 
+### Task -  
+An operation that can be run asynchronously with priority.
+Contains a TaskType, each type has a numerical value which determines the priority of the task.  
+It will contain a method with a generic return value. If the operation cannot be performed, an exception will be thrown
+ (Exception).  
+ 
+ 
+ ### TaskType -  
+ Represent the task type.
 
+### CustomExcecutor -  
+A type of ThreadPool that runs Task type operations asynchronously according to priority.
+A task queue will be maintained which arranges the elements in the queue according to their priority,
+from low to high at any given moment
 
  ### Tests -  
   Tests that we made.
