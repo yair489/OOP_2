@@ -1,6 +1,6 @@
-### Object-Oriented Programming - Ex2
+##### Object-Oriented Programming - Ex2
 
-Assignment 2
+
 
 ## Thread
 
@@ -50,8 +50,8 @@ Represent a Thread that calculate the total number of rows of all files using th
 **threadPool** -   
 Represent the Thread that calculate the total number of rows of all files using threads in function number 4 (getNumOfLinesThreadsPool).  
 
-**Tests** -  
-Tests that we made.
+  **Tests** -  
+  Tests that we made.
 
 
 ## The differences between the running times of the functions  
@@ -74,4 +74,19 @@ calculating their row, they died and more were created each time.
 In the third function, the calculation of the rows is also done by several threads at the same time, but after they finished  
 calculating their row, they did not die, but moved on to the calculation of the next row,This is because it was managed in threadspool
  
-From here you can understand the reasons for the difference between the running times.
+From here we can understand the reasons for the difference between the running times.
+
+
+### part 2  
+
+In this part we created new type that provides an asynchronous task with priority and a ThreadPool type that supports tasks
+priority.
+
+## picture of the diagrama
+
+
+
+
+  **Tests** -  
+  Tests that we made.
+
