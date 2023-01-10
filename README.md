@@ -4,7 +4,8 @@ Assignment 2
 
 **Thread**
 
-What is a thread?
+**What is a thread?**
+
 A thread is a single sequential flow of control within a program.
 
 Threads allows a program to operate more efficiently by doing multiple things at the same time.
