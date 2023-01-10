@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.*;
 
-public class Ex2_f {
+public class Ex2_1 {
 
     /**
      *The function will create N files with different line numbers
