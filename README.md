@@ -21,3 +21,5 @@ A thread pool reuses previously created threads to execute current tasks and off
 cycle overhead and resource thrashing.
 A thread pool manages a set of anonymous threads that perform work on request. The threads do not terminate right away.
 When one of the threads completes a task, the thread becomes idle, ready to be dispatched to another task. 
+
+#**Our assignment**
