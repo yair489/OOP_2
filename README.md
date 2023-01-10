@@ -1,8 +1,8 @@
-# OOP_2
+### OOP_2
 
 Assignment 2
 
-**Thread**
+## Thread
 
 **What is a thread?**
 A thread is a single sequential flow of control within a program.
@@ -12,7 +12,7 @@ Threads can be used to perform complicated tasks in the background without inter
 Every thread has a priority. Threads with higher priority are executed in preference to threads with lower priority. 
 Threads who have finished their jobs will die. It won't consume any more CPU time.
 
-**ThreadPool**
+## ThreadPool
 
 **What is threadPool?**
 A thread pool is a software design pattern for achieving concurrency of execution in a computer program.
@@ -22,4 +22,9 @@ cycle overhead and resource thrashing.
 A thread pool manages a set of anonymous threads that perform work on request. The threads do not terminate right away.
 When one of the threads completes a task, the thread becomes idle, ready to be dispatched to another task. 
 
-#**Our assignment**
+## Our assignment
+In this assignment we sent text files in different methods (withot thread, with thread and threadPool). 
+In addition, we created new type that provides an asynchronous task with priority and a ThreadPool type that supports tasks
+priority.
+
+
