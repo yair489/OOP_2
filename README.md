@@ -1,4 +1,4 @@
-### OOP_2
+### Object-Oriented Programming - Ex2
 
 Assignment 2
 
@@ -40,5 +40,6 @@ It return an array with the names of the files.
 **2. getNumOfLines** - this function get an array of files and returns the total number of rows of all files.  
 **3. getNumOfLinesThreads** - this function get an array of files and returns the total number of rows of all files using threads.  
 **4. getNumOfLinesThreadsPool** - this function get an array of files and returns the total number of rows of all files using ThreadPool.
+![תמונה מונחה](https://user-images.githubusercontent.com/120071641/211654272-5a8d7143-eb3d-44d5-93b1-d361da479d98.jpeg)
 
-
+## picture
