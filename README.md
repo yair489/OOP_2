@@ -24,9 +24,21 @@ cycle overhead and resource thrashing.
 A thread pool manages a set of anonymous threads that perform work on request. The threads do not terminate right away.
 When one of the threads completes a task, the thread becomes idle, ready to be dispatched to another task. 
 
+
 ## Our assignment
 In this assignment we sent text files in different methods (withot thread, with thread and threadPool). 
 In addition, we created new type that provides an asynchronous task with priority and a ThreadPool type that supports tasks
 priority.
+
+
+## Part 1
+
+In this part we created a number of text files, using 4 functions we calculated the total number of rows in the files.
+
+**1. createTextFiles** - this function create the text files andThis function creates the text files and the number of lines in each file randomly.
+It return an array with the names of the files.
+**2. getNumOfLines** - this function get an array of files and returns the total number of rows of all files.
+**3. getNumOfLinesThreads** - this function get an array of files and returns the total number of rows of all files using threads.
+**4. getNumOfLinesThreadsPool** - this function get an array of files and returns the total number of rows of all files using ThreadPool.
 
 
