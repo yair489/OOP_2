@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>part1</OriginalElement>
+  <nodes>
+    <node x="-30.0" y="206.66666666666669">part1.Ex2_f</node>
+    <node x="173.0" y="35.33333333333334">part1.threadPool</node>
+    <node x="-262.3333333333333" y="206.66666666666669">part1.Ex2</node>
+    <node x="-123.66666666666669" y="17.000000000000007">part1.MyTreadFile</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="part1.Ex2_f" target="part1.threadPool" relationship="CREATE">
+      <point x="86.5" y="-71.5" />
+      <point x="186.0" y="145.83333333333334" />
+      <point x="248.0" y="145.83333333333334" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="part1.Ex2_f" target="part1.MyTreadFile" relationship="CREATE">
+      <point x="-86.5" y="-71.5" />
+      <point x="13.0" y="157.33333333333334" />
+      <point x="-45.666666666666686" y="157.33333333333334" />
+      <point x="0.0" y="61.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.5" showDependencies="true" x="108.0" y="180.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
