@@ -44,13 +44,13 @@ It return an array with the names of the files.
 ![תמונה מונחה](https://user-images.githubusercontent.com/120071641/211654272-5a8d7143-eb3d-44d5-93b1-d361da479d98.jpeg)
 
 
-**MyThreadFile** -  
+### MyThreadFile  -  
 Represent a Thread that calculate the total number of rows of all files using threads.  
   
-**threadPool** -   
+### threadPool -   
 Represent the Thread that calculate the total number of rows of all files using threads in function number 4 (getNumOfLinesThreadsPool).  
 
-  **Tests** -  
+ ### Tests -  
   Tests that we made.
 
 
@@ -87,6 +87,6 @@ priority.
 
 
 
-  **Tests** -  
+ ### Tests -  
   Tests that we made.
 
