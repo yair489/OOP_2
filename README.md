@@ -44,4 +44,34 @@ It return an array with the names of the files.
 ![תמונה מונחה](https://user-images.githubusercontent.com/120071641/211654272-5a8d7143-eb3d-44d5-93b1-d361da479d98.jpeg)
 
 
-## picture
+**MyThreadFile** -  
+Represent a Thread that calculate the total number of rows of all files using threads.  
+  
+**threadPool** -   
+Represent the Thread that calculate the total number of rows of all files using threads in function number 4 (getNumOfLinesThreadsPool).  
+
+**Tests** -  
+Tests that we made.
+
+
+## The differences between the running times of the functions  
+  
+  ![image](https://user-images.githubusercontent.com/120071641/211655054-27cf5d6e-3f0b-47bb-bd23-34bb9c2fc7f1.png)
+
+The times shown in the program were measured in nano times. 
+After converting the times to seconds:  
+
+**1. getNumOfLines** - 4.1844 seconds.  
+**2. getNumOfLinesThreads** - 0.24007 seconds.  
+**3. getNumOfLinesThreadsPool** - 0.21242 seconds. 
+
+As we can see, the function without using threads took the most time to calculate the total number of rows of the files,  
+while the function using threadsPool took the least time.
+The function used by threads took the average time between the above 2 functions.
+In the first function, the rows are calculated one after the other, not simultaneously.
+In the second function, the calculation of the rows is done by several threads at the same time, but after they finished  
+calculating their row, they died and more were created each time.
+In the third function, the calculation of the rows is also done by several threads at the same time, but after they finished  
+calculating their row, they did not die, but moved on to the calculation of the next row,This is because it was managed in threadspool
+ 
+From here you can understand the reasons for the difference between the running times.
