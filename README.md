@@ -5,6 +5,7 @@ Assignment 2
 ## Thread
 
 **What is a thread?**
+
 A thread is a single sequential flow of control within a program.
 
 Threads allows a program to operate more efficiently by doing multiple things at the same time.
@@ -15,6 +16,7 @@ Threads who have finished their jobs will die. It won't consume any more CPU tim
 ## ThreadPool
 
 **What is threadPool?**
+
 A thread pool is a software design pattern for achieving concurrency of execution in a computer program.
 
 A thread pool reuses previously created threads to execute current tasks and offers a solution to the problem of thread
