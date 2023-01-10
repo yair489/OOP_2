@@ -2,7 +2,7 @@
 
 Assignment 2
 
-*Thread*
+**Thread**
 
 What is a thread?
 A thread is a single sequential flow of control within a program.
