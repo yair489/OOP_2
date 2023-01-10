@@ -37,8 +37,11 @@ In this part we created a number of text files, using 4 functions we calculated 
 
 **1. createTextFiles** - this function create the text files andThis function creates the text files and the number of lines in each file randomly.  
 It return an array with the names of the files.  
+
 **2. getNumOfLines** - this function get an array of files and returns the total number of rows of all files.  
+
 **3. getNumOfLinesThreads** - this function get an array of files and returns the total number of rows of all files using threads.  
+
 **4. getNumOfLinesThreadsPool** - this function get an array of files and returns the total number of rows of all files using ThreadPool.  
 
 ![תמונה מונחה](https://user-images.githubusercontent.com/120071641/211654272-5a8d7143-eb3d-44d5-93b1-d361da479d98.jpeg)
@@ -62,7 +65,9 @@ The times shown in the program were measured in nano times.
 After converting the times to seconds:  
 
 **1. getNumOfLines** - 4.1844 seconds.  
+
 **2. getNumOfLinesThreads** - 0.24007 seconds.  
+
 **3. getNumOfLinesThreadsPool** - 0.21242 seconds. 
 
 As we can see, the function without using threads took the most time to calculate the total number of rows of the files,  
@@ -77,7 +82,7 @@ calculating their row, they did not die, but moved on to the calculation of the 
 From here we can understand the reasons for the difference between the running times.
 
 
-### part 2  
+## part 2  
 
 In this part we created new type that provides an asynchronous task with priority and a ThreadPool type that supports tasks
 priority.
