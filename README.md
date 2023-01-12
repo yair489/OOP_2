@@ -112,7 +112,8 @@ Contains a TaskType, each type has a numerical value which determines the priori
 It will contain a method with a generic return value. If the operation cannot be performed, an exception will be thrown
  (Exception).  
  
- The class implements **Callable** -  
+ 
+ ### The class implements Callable -  
  
  to have an asynchronous task with some return value.  
  
@@ -120,7 +121,7 @@ It will contain a method with a generic return value. If the operation cannot be
     
     
 
-The class implements **Comparable** -   
+### The class implements Comparable -   
 
 so that we put the objects into the PriorityBlockingQueue, it will compare to the type we made.  
 
@@ -128,15 +129,15 @@ so that we put the objects into the PriorityBlockingQueue, it will compare to th
   
     
     
-The class inherits from **FutureTask** -  
+### The class inherits from FutureTask -  
 
-We do this because **FutureTask** is of type RunnableFuture and thus it can be inserted into the ThreadPool.
+We do this because FutureTask is of type RunnableFuture and thus it can be inserted into the ThreadPool.
 
   
     
     
 
-The class has **2 constructors** -  
+### The class has 2 constructors -  
 
 1. The first accepts Callable and TaskType.  
   
@@ -165,7 +166,7 @@ The class also has 3 submits -
 
 The first and the second: we receive the parameters and create Task and send it to the first submit (basic tests are performed there), then we execute the execute command for the task to enter the queue in the ThreadPool.
 
-The class inherits from **ThreadPoolExecutor** - 
+### The class inherits from ThreadPoolExecutor - 
   
 We did it because we needed access to the beforeExecute method which helps in implementing getCurrentMax according to the limiting conditions, we will immediately update getCurrentMax.
 
