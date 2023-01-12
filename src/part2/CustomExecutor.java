@@ -1,17 +1,16 @@
 package part2;
 
-import part2.Task;
-import part2.TaskType;
-
-import java.util.Objects;
 import java.util.concurrent.*;
 
-public class CustomExecutor{// implements ExecutorService {
+public class CustomExecutor extends  ThreadPoolExecutor  {
 
-    private PriorityBlockingQueue queue;
-    private int numOfCores,corePoolSize,maxPoolSize;
-    private ThreadPoolExecutor threadPool_c;
-    private int maxvalue;
+    private static PriorityBlockingQueue queue= new PriorityBlockingQueue<Runnable>();
+
+    private static int numOfCores = Runtime.getRuntime().availableProcessors();
+
+   private int[] CurrentMax;
+    //private int curretnMax;
+
 
     /**
      * constructor
@@ -20,16 +19,14 @@ public class CustomExecutor{// implements ExecutorService {
      * and stores in a PriorityBlockingQueue
      */
     public CustomExecutor() {
-        queue = new PriorityBlockingQueue<Runnable>();
-        this.numOfCores   = Runtime.getRuntime().availableProcessors();
-        this.corePoolSize = numOfCores/2;
-        this.maxPoolSize  = numOfCores-1;
 
-        this.threadPool_c = new ThreadPoolExecutor
-                (corePoolSize, maxPoolSize,
-                        300, TimeUnit.MILLISECONDS,
-                        queue);
-        maxvalue=10;
+        super(numOfCores/2,numOfCores-1, 300, TimeUnit.MILLISECONDS,
+                queue);
+       this.CurrentMax= new int[11];
+       for (int i=0 ;i<CurrentMax.length;i++){
+           CurrentMax[i]=0;
+       }
+        System.out.println(CurrentMax.length + "arr");
     }
 
     /**
@@ -39,7 +36,7 @@ public class CustomExecutor{// implements ExecutorService {
      * @return task1 of a kind RunnableFuture
      * @param <T>
      */
-    private <T> Future<T> submit(Task<T> task){
+    public   Future submit(Task task){
 
 
         if (task==null|| task.getTaskType()==null){
@@ -47,11 +44,18 @@ public class CustomExecutor{// implements ExecutorService {
         }
         if (task == null || task.getCallable() == null)
             throw new NullPointerException();
-        this.maxvalue = Math.min(  task.getTaskType().getPriorityValue() , this.maxvalue);
-        threadPool_c.execute(task);
+
+        int priority = task.getTaskType().getPriorityValue();
+      //System.out.println(priority+" oriority submit");
+        this.CurrentMax[priority]=CurrentMax[priority]+1;
+
+        //threadPool_c.execute(task);
+
+        execute(task);
         return task;
 
     }
+
 
     /**
      * Takes the data, creates a Task from it and sends it to the submit function above
@@ -59,19 +63,33 @@ public class CustomExecutor{// implements ExecutorService {
      * @param task of kind TaskType
      * @return task1 of a kind RunnableFuture
      */
-    public Future<Object> submit(Callable cal, TaskType task){
-        if (cal==null || task==null ){
-            throw new RuntimeException("one of the paramter is null");
-        }
+
+    public Future submit(Callable cal, TaskType task){
+
         Task tempTask =  Task.createTask(cal,task);
         return submit(tempTask);
     }
-    public Future<Object> submit(Callable cal){
+    @Override
+    public Future submit(Callable cal){
         if (cal==null ){
             throw new RuntimeException("Callable is null");
         }
         Task tempTask =  Task.createTask(cal);
         return submit(tempTask);
+    }
+    @Override
+//    protected synchronized void afterExecute(Runnable t, Throwable r) {
+//     int curent= getCurrentMax();
+//        System.out.println(curent +" after execute");
+//     if (0<curent && curent >=10)
+//         this.CurrentMax[curent]=CurrentMax[curent]-1;
+//    }
+
+    protected void beforeExecute(Thread t, Runnable r) {
+        int priority = getCurrentMax();
+        System.out.println(priority);
+        if (1 <= priority && priority <= 3)
+            CurrentMax[priority]--;
     }
 
     /**
@@ -85,33 +103,36 @@ public class CustomExecutor{// implements ExecutorService {
 
         do {
             try {
-                threadPool_c.shutdown();
-                threadPool_c.awaitTermination(300,TimeUnit.MILLISECONDS);
+
+                super.shutdown();
+                super.awaitTermination(300,TimeUnit.MILLISECONDS);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-        }while (!threadPool_c.isTerminated());
+        }while (!super.isTerminated());
 
 
     }
-
     /**
      *getter and setter
      */
-    public int getCurrentMax() {
-        return maxvalue;
+
+    public static int getNumOfCores() {
+        return numOfCores;
     }
-    public void setCorePoolSize(int corePoolSize) {
-        this.corePoolSize = corePoolSize;
-    }
-    public void setMaxPoolSize(int maxPoolSize) {
-        this.maxPoolSize = maxPoolSize;
-    }
-    public PriorityBlockingQueue getQueue() {
-        return queue;
+
+    public static void setNumOfCores(int numOfCores) {
+        CustomExecutor.numOfCores = numOfCores;
     }
 
 
+    public  int getCurrentMax() {
 
+        for (int i = 1; i <= 10; i++) {
+            if (this.CurrentMax[i]>0)
+                return i;
+        }
+        return 0;
+    }
 
 }
