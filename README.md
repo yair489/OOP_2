@@ -96,8 +96,6 @@ The CustomExecutor class which creates tasks of type task and enters a ThreadPoo
 In this part we created new type that provides an asynchronous task with priority and a ThreadPool type that supports tasks
 priority.
 
-## add picture of the diagrama
-
  ### TaskType -  
  The TaskType class: a given class which actually determines the priority of the task,
  (Represent the task type.)
@@ -141,4 +139,6 @@ That's why we built an array that is updated for the first time in submit and in
 
  ### Tests -  
   Tests that we made.
+  
+  ## add picture of the diagrama
 
