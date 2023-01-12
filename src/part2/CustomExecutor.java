@@ -3,6 +3,7 @@ package part2;
 import part2.Task;
 import part2.TaskType;
 
+import java.util.Objects;
 import java.util.concurrent.*;
 
 public class CustomExecutor{// implements ExecutorService {
@@ -40,16 +41,7 @@ public class CustomExecutor{// implements ExecutorService {
      */
     private <T> Future<T> submit(Task<T> task){
 
-//        Future<T> future = null;
-//        if (task==null){
-//            throw new RuntimeException("task is null");
-//        }else {
-//            this.maxvalue = Math.min(  task.getTaskType().getPriorityValue() , this.maxvalue);
-//            // task.getTaskType().setPriority(  Math.min(10,task.getTaskType().getPriorityValue()));
-//            future =this.threadPool_c.submit(task);
-//        }
-//        //threadPool_c.execute((Runnable) task);
-//        return future;
+
         if (task==null|| task.getTaskType()==null){
             throw new NullPointerException();
         }
@@ -60,13 +52,6 @@ public class CustomExecutor{// implements ExecutorService {
         return task;
 
     }
-//    public  <T> RunnableFuture<T> newTaskFor(final Callable<T> callable) {
-//        int priority = getCurrentMax();
-//        TaskType type = TaskType.IO;
-//        if (1 <= priority && priority <= 3)
-//            type.setPriority(priority);
-//        return Task.createTask(callable, type);
-//    }
 
     /**
      * Takes the data, creates a Task from it and sends it to the submit function above
@@ -125,4 +110,8 @@ public class CustomExecutor{// implements ExecutorService {
     public PriorityBlockingQueue getQueue() {
         return queue;
     }
+
+
+
+
 }
