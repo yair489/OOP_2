@@ -81,7 +81,17 @@ calculating their row, they did not die, but moved on to the calculation of the 
 From here we can understand the reasons for the difference between the running times.
 
 
-## part 2  
+## part 2 
+
+## Summary
+In Java, there is no built-in option to prioritize an asynchronous task. Java does allow you to set a priority for the Thread that runs the task, but not for the task itself. Therefore, we are in a problem when we want to prioritize an asynchronous task. In addition, we learned to use ThreadPool, which is adapted to runnable problems, while we created a callable task:
+
+The purpose of the task is to build such a ThreadPool that contains a PriorityQueue into which tasks of the task type (which contain callable) can be inserted, therefore we created:
+
+Task class: the class implements callable to be an asynchronous task with a return value and in addition Typetask to have a certain priority
+
+The CustomExecutor class which creates tasks of type task and enters a ThreadPool which will execute tasks according to priority.
+
 
 In this part we created new type that provides an asynchronous task with priority and a ThreadPool type that supports tasks
 priority.
