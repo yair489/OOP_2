@@ -125,6 +125,20 @@ A type of ThreadPool that runs Task type operations asynchronously according to 
 A task queue will be maintained which arranges the elements in the queue according to their priority,
 from low to high at any given moment
 
+The CustomExecutor class: which actually produces the Task type objects we built and puts a location in the priority queue, this is done by building a ThreadPool in a more extensive way:
+
+Constructor: executes the super command: in which he initializes the minimum and maximum number of threads, the excess thread is allowed to be in the air for 0.3 seconds, and inserts a PriorityBlockingQueue (which will arrange the members according to the compareto we implemented in the class task)
+
+The class also has 3 submits: the first accepts Task, the second accepts Callable and also TaskType, the third accepts Callable
+
+The first and the second: we receive the parameters and createTask and send it to the first submit in it (there are basic tests) in which we execute the execute command
+for the task to enter the queue in the ThreadPool.
+
+The class inherits from ThreadPoolExecutor because we needed access to the beforeExecute method which helps in implementing getCurrentMax according to the limiting conditions, we will immediately specify getCurrentMax.
+
+getCurrentMax: A method that should return the maximum value that is currently in the queue, this method must not access the queue.
+That's why we built an array that is updated for the first time in submit and increases the value by one in the appropriate place in the array, in the beforeExecute method we check the highest value that is currently in the queue and download it from the array, so the array is updated with what is in the queue every moment. At the end of the getCurrentMax function you will find out what is the first cell that is greater than 0 and return the cell number.
+
  ### Tests -  
   Tests that we made.
 
