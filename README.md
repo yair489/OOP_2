@@ -141,4 +141,5 @@ That's why we built an array that is updated for the first time in submit and in
   Tests that we made.
   
   ## add picture of the diagrama
+![image](https://user-images.githubusercontent.com/118690651/212040889-35c82dbd-c027-46a7-8ca1-147b00bb5ab4.png)
 
