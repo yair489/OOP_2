@@ -9,7 +9,7 @@ public class CustomExecutor extends  ThreadPoolExecutor  {
     private static int numOfCores = Runtime.getRuntime().availableProcessors();
 
    private int[] CurrentMax;
-    //private int curretnMax;
+
 
 
     /**
