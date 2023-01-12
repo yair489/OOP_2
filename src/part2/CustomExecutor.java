@@ -8,7 +8,7 @@ public class CustomExecutor extends  ThreadPoolExecutor  {
 
     private static int numOfCores = Runtime.getRuntime().availableProcessors();
 
-   private int[] CurrentMax;
+    private int[] CurrentMax;
 
 
 
@@ -22,11 +22,11 @@ public class CustomExecutor extends  ThreadPoolExecutor  {
 
         super(numOfCores/2,numOfCores-1, 300, TimeUnit.MILLISECONDS,
                 queue);
-       this.CurrentMax= new int[11];
-       for (int i=0 ;i<CurrentMax.length;i++){
-           CurrentMax[i]=0;
-       }
-        System.out.println(CurrentMax.length + "arr");
+        this.CurrentMax= new int[11];
+        for (int i=0 ;i<CurrentMax.length;i++){
+            CurrentMax[i]=0;
+        }
+        //System.out.println(CurrentMax.length + "arr");
     }
 
     /**
@@ -34,7 +34,7 @@ public class CustomExecutor extends  ThreadPoolExecutor  {
      *  execute() method can only accept a Runnable Task
      * @param task
      * @return task1 of a kind RunnableFuture
-     * @param <T>
+     *
      */
     public   Future submit(Task task){
 
@@ -46,7 +46,7 @@ public class CustomExecutor extends  ThreadPoolExecutor  {
             throw new NullPointerException();
 
         int priority = task.getTaskType().getPriorityValue();
-      //System.out.println(priority+" oriority submit");
+        //System.out.println(priority+" oriority submit");
         this.CurrentMax[priority]=CurrentMax[priority]+1;
 
         //threadPool_c.execute(task);
@@ -87,8 +87,8 @@ public class CustomExecutor extends  ThreadPoolExecutor  {
 
     protected void beforeExecute(Thread t, Runnable r) {
         int priority = getCurrentMax();
-        System.out.println(priority);
-        if (1 <= priority && priority <= 3)
+        //System.out.println(priority);
+        if (1 <= priority && priority <= 10)
             CurrentMax[priority]--;
     }
 
