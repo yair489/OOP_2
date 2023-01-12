@@ -34,7 +34,7 @@ priority.
 ## Part 1
 
 In this part we created a number of text files, using 4 functions we calculated the total number of rows in the files.
-
+(We checked on 1000 files)
 **1. createTextFiles** - this function create the text files andThis function creates the text files and the number of lines in each file randomly.  
 It return an array with the names of the files.  
 
@@ -98,15 +98,27 @@ priority.
 
 ## add picture of the diagrama
 
+ ### TaskType -  
+ The TaskType class: a given class which actually determines the priority of the task,
+ (Represent the task type.)
+
 ### Task -  
 An operation that can be run asynchronously with priority.
 Contains a TaskType, each type has a numerical value which determines the priority of the task.  
 It will contain a method with a generic return value. If the operation cannot be performed, an exception will be thrown
  (Exception).  
  
+ The class implements Callable to have an asynchronous task with some return value
+
+The class implements Comparable so that we put the objects into the PriorityBlockingQueue, it will compare to the type we made.
+
+The class inherits from FutureTask because FutureTask is of type RunnableFuture and thus it can be inserted into the ThreadPool
+
+In addition to the class there is a datamember of type TypeTask which contains the priority of the task
+The class has 2 constructors: the first accepts Callable and TaskType , and the second accepts Callable both send to the father the variable from the Callable mask using the super command, the constructors are defined as private and can be accessed using createTask, which are Factory methods.
  
- ### TaskType -  
- Represent the task type.
+ 
+
 
 ### CustomExcecutor -  
 A type of ThreadPool that runs Task type operations asynchronously according to priority.
