@@ -114,15 +114,20 @@ It will contain a method with a generic return value. If the operation cannot be
  
  The class implements **Callable** -  
  
- to have an asynchronous task with some return value.
+ to have an asynchronous task with some return value.  
+ 
+ 
 
 The class implements **Comparable** -   
 
-so that we put the objects into the PriorityBlockingQueue, it will compare to the type we made.
+so that we put the objects into the PriorityBlockingQueue, it will compare to the type we made.  
+
+
 
 The class inherits from **FutureTask** -  
 
 We do this because **FutureTask** is of type RunnableFuture and thus it can be inserted into the ThreadPool.
+
 
 
 The class has **2 constructors** -  
