@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>part2</OriginalElement>
+  <nodes>
+    <node x="-320.0" y="208.11568123393315">part2.Task</node>
+    <node x="185.50899742930596" y="213.43701799485862">part2.CustomExecutor</node>
+    <node x="488.70437017994846" y="325.81362467866325">part2.Tests</node>
+    <node x="-20.859897172236515" y="211.9858611825193">part2.TaskType</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="part2.Tests" target="part2.CustomExecutor" relationship="CREATE">
+      <point x="0.0" y="-49.5" />
+      <point x="558.2043701799485" y="309.0" />
+      <point x="326.00899742930596" y="309.0" />
+      <point x="0.0" y="149.5" />
+    </edge>
+    <edge source="part2.Task" target="part2.TaskType" relationship="TO_ONE">
+      <point x="0.0" y="-160.5" />
+      <point x="-177.5" y="198.0" />
+      <point x="77.64010282776349" y="198.0" />
+      <point x="0.0" y="94.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.3436960276338514" showDependencies="true" x="236.5" y="274.5" />
+  <SelectedNodes>
+    <node>part2.Tests</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
